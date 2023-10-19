@@ -1,0 +1,63 @@
+﻿<Window x:Class="CalculadoraNoWindows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CalculadoraNoWindows"
+        mc:Ignorable="d"
+        Title="Cutreladora" MinHeight="320" MinWidth="380" MaxHeight="320" MaxWidth="380">
+
+    <Grid x:Name="GridCalculadora" Background="#FF252525">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="*"/>
+
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+
+        </Grid.ColumnDefinitions>
+        
+        <Label x:Name="num1Label" Content="NÚMERO 1" Grid.Column="0" Grid.Row="0" Foreground="White" HorizontalContentAlignment="Center"/>
+        <Label x:Name="num2Label" Content="NÚMERO 2" Grid.Column="1" Grid.Row="0" Foreground="White" HorizontalContentAlignment="Center"/>
+
+        <TextBox x:Name="Input1" HorizontalContentAlignment="Right" Text="0" Grid.Column="0" Grid.Row="1" Foreground="White" FontSize="32px" Background="Transparent" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="6px"/>
+        <TextBox x:Name="Input2" HorizontalContentAlignment="Right" Text="0" Grid.Column="1" Grid.Row="1" Foreground="White" FontSize="32px" Background="Transparent" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="6px"/>
+
+        <RadioButton IsChecked="True" Content="Sumar" x:Name="sumaRadio" Grid.Column="0" Grid.Row="2" Foreground="White" Margin="14,2,0,2" VerticalAlignment="Center" Checked="Radio_Checked"/>
+        <RadioButton Content="Restar" x:Name="restaRadio" Grid.Column="0" Grid.Row="3" Foreground="White" Margin="14,2,0,2" VerticalAlignment="Center" Checked="Radio_Checked"/>
+        <RadioButton Content="Multiplicar" x:Name="multRadio" Grid.Column="0" Grid.Row="4" Foreground="White" Margin="14,2,0,2" VerticalAlignment="Center" Checked="Radio_Checked"/>
+        <RadioButton Content="Dividir" x:Name="divRadio" Grid.Column="0" Grid.Row="5" Foreground="White" Margin="14,2,0,2" VerticalAlignment="Center" Checked="Radio_Checked"/>
+
+        <Label x:Name="ResultadoLabel" Content="RESULTADO" Grid.Column="1" Grid.Row="5" Foreground="White" HorizontalContentAlignment="Center"/>
+
+        <Grid x:Name="buttonsGrid" Margin="10px" Grid.Column="0" Grid.Row="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Button x:Name="calcButton" VerticalAlignment="Top" HorizontalAlignment="Stretch" Content="Calcular" Grid.Column="0" Grid.Row="0"  Margin="5px" FontStretch="Expanded" Click="calculateButton_Click"/>
+            <Button x:Name="clearButton" VerticalAlignment="Top" HorizontalAlignment="Stretch" Content="Borrar" Grid.Column="1" Grid.Row="0"  Margin="5px" FontStretch="Expanded" Click="clearButton_Click"/>
+            <Button x:Name="exitButton" VerticalAlignment="Top" HorizontalAlignment="Stretch" Content="Salir" Grid.Column="0" Grid.Row="1" Margin="5px" Click="exitButton_Click"/>
+        </Grid>
+
+        <TextBox IsEnabled="False" x:Name="Resultado" HorizontalContentAlignment="Right" Text="0" Grid.Row="6" Grid.Column="1" Foreground="White" Background="Transparent" FontSize="32px" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="6px"/>
+
+    </Grid>
+    
+</Window>
